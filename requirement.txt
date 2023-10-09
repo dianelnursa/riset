@@ -61,7 +61,7 @@ nbconvert
 nbformat 
 nest-asyncio 
 networkx==2.6.3
-numpy==1.21.6
+numpy
 oauthlib==3.2.2
 opt-einsum==3.3.0
 packaging==23.1
