@@ -85,9 +85,6 @@ pyrsistent
 python-dateutil
 pytz==2023.3.post1
 PyWavelets==1.3.0
-pywin32
-pywinpty 
-pyzmq 
 requests==2.31.0
 requests-oauthlib==1.3.1
 rsa==4.9
