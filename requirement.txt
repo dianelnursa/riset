@@ -1,1 +1,3 @@
-
+flask
+tensorflow
+scikit-image
