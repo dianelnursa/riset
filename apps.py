@@ -32,20 +32,19 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # routes
+@app.route("/developer", methods=['GET', 'POST'])
+def developer():
+	return render_template("developer.html")
+	
 @app.route("/", methods=['GET', 'POST'])
 def main():
 	return render_template("cnn.html")
-
+	
 @app.route("/classification", methods = ['GET', 'POST'])
 def classification():
 	return render_template("classifications.html")
 
-@app.route("/developer")
-def developer():
-    developer_info = {
-        'name': 'Dian Budi Elnursa',
-        'photo_url': 'path/to/your/photo.jpg',
-    }
+
 @app.route('/submit', methods=['POST'])
 def predict():
     if 'file' not in request.files:
