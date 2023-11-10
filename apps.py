@@ -38,9 +38,9 @@ def developer():
     'youtube': 'https://youtube.com/@060_dianelnursa4?si=SYTWDA8lABWj8pSm'}
 	return render_template("developer.html", developer_info=developer_info)
 	
-@app.route("/", methods=['GET', 'POST'])
-def main():
-	return render_template("cnn.html")
+#@app.route("/", methods=['GET', 'POST'])
+#def main():
+	#return render_template("cnn.html")
 	
 @app.route("/classification", methods = ['GET', 'POST'])
 def classification():
