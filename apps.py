@@ -40,6 +40,12 @@ def main():
 def classification():
 	return render_template("classifications.html")
 
+@app.route("/developer")
+def developer():
+    developer_info = {
+        'name': 'Dian Budi Elnursa',
+        'photo_url': 'path/to/your/photo.jpg',
+    }
 @app.route('/submit', methods=['POST'])
 def predict():
     if 'file' not in request.files:
