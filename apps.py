@@ -34,7 +34,7 @@ def allowed_file(filename):
 # routes
 @app.route("/developer", methods=['GET', 'POST'])
 def developer():
-	developer_info = {'name': 'Your Name', 'photo_url': '/static/path/to/your/photo.jpg',
+	developer_info = {'name': 'Dian Budi Elnursa', 'photo_url': '/static/path/to/your/photo.jpg',
 	}
 	return render_template("developer.html", developer_info=developer_info)
 	
