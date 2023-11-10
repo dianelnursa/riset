@@ -100,13 +100,26 @@
                     <div class="card-header">
                         <h4>Input Image</h4>
                     </div>
+                    <!--/.col-->
                     <div class="card-body">
-                        <form action="/submit" method="post" enctype="multipart/form-data">
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="file-input" class=" form-control-label">File
-                                        input</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="file" name="file"
-                                        class="form-control-file">
+                        <!-- Information about types of Simplisia Fructus -->
+                        <h5>Deteksi Jenis Simplisia Fructus</h5>
+                        <p> Aplikasi saat ini terbatas hanya dapat mendeteksi 7 jenis simplisia fructus meliputi
+                        <ol>
+                            <li>Amomi Fructus/Kapulaga</li>
+                            <li>Cumini Fructus/Jinten</li>
+                            <li>Piperis Albi Ftuctus/Lada Putih</li>
+                            <li>Piperis Nigri Fructus/Lada Hitam</li>
+                            <li>Piper Retrofractum Fructus/Cabai Jawa</li>
+                            <li>Tamarindus Indicia Fructus/Asam Jawa</li>
+                            <li>Capsici Frutescentis Fructus/ Cabai Rawit</li>
+                        </ol>
+                    </p>
+                        <div class="card-body">
+                            <form action="/submit" method="post" enctype="multipart/form-data">
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
+                                    <div class="col-12 col-md-9"><input type="file" id="file" name="file" class="form-control-file">
                                 </div>
                             </div>
                             <div class="row">
@@ -246,4 +259,5 @@
 
 
 
-            </html>
+        </html>
+            
