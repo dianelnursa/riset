@@ -115,14 +115,15 @@
                             <li>Capsici Frutescentis Fructus/ Cabai Rawit</li>
                         </ol>
                     </p>
-                        <div class="card-body">
-                            <form action="/submit" method="post" enctype="multipart/form-data">
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
-                                    <div class="col-12 col-md-9"><input type="file" id="file" name="file" class="form-control-file">
-                                    </div>
+                        <!-- Your existing form code goes here -->
+                        <form action="/submit" method="post" enctype="multipart/form-data">
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label>
                                 </div>
-                                <div class="row">
+                                <div class="col-12 col-md-9"><input type="file" id="file" name="file" class="form-control-file">
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-3" style="margin-left: 15px;"></div>
                                 <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
                             </div>
@@ -130,6 +131,7 @@
                     </div>
                 </div>
             </div>
+            <!--/.col-->
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
