@@ -93,10 +93,10 @@ def predict():
     # prepare api response
     class_names = ['Amomi Fructus (Kapulaga)', 'Capsici Fructescentis Fructus (Cabai Rawit)', 'Cumini Fructus (Jinten Putih)', 'Piper Retrofractum Fructus (Cabai Jawa)', 'Piperis Albi Fructus (Lada Putih)', 'Piperis Nigri Fructus (Lada Hitam)', 'Tamarindus Indicia Fructus (Asam Jawa)']	
     return render_template("classifications.html", img_path = predict_image_path, 
-                        predictionnasnet = class_names[np.argmax(prediction_array_nasnet)],
-                        confidencenasnet = '{:2.0f}%'.format(100 * np.max(prediction_array_nasnet)),
-                        predictionvgg = class_names[np.argmax(prediction_array_vgg)],
-                        confidencvgg = '{:2.0f}%'.format(100 * np.max(prediction_array_vgg)),
+                        #predictionnasnet = class_names[np.argmax(prediction_array_nasnet)],
+                        #confidencenasnet = '{:2.0f}%'.format(100 * np.max(prediction_array_nasnet)),
+                        #predictionvgg = class_names[np.argmax(prediction_array_vgg)],
+                        #confidencvgg = '{:2.0f}%'.format(100 * np.max(prediction_array_vgg)),
                         predictionxception = class_names[np.argmax(prediction_array_xception)],
                         confidenceexception = '{:2.0f}%'.format(100 * np.max(prediction_array_xception)),
                         )
