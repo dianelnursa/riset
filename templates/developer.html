@@ -55,7 +55,6 @@
                     <li>
                         <a href="{{ url_for('developer') }}"> <i class="menu-icon fa fa-image"></i>Profile Pengembang </a>
                     </li>
-                    
                     <li>
                         <a href="{{ url_for('classification') }}"> <i class="menu-icon fa fa-image"></i>Image
                             Classification </a>
@@ -99,116 +98,171 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Informasi Profile Pengembang</h4>
+                        <h4>Result Tab</h4>
                     </div>
                     <div class="card-body">
-                        <img src="{{ developer_info.photo_url }}" alt="{{ developer_info.name }} Photo" style="max-width: 50%;">
-                        <p style="font-size: 24px;">Nama: {{ developer_info.name }}</p>
-                        <p>LinkedIn: <a href="{{ developer_info.linkedin }}" target="_blank">{{ developer_info.linkedin }}</a></p>
-                        <p>YouTube: <a href="{{ developer_info.youtube }}" target="_blank">{{ developer_info.youtube }}</a></p>
-                        <!-- Add more information as needed -->
+                        <div class="custom-tab">
+
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab"
+                                        href="#custom-nav-home" role="tab" aria-controls="custom-nav-home"
+                                        aria-selected="true">Chart</a>
+                                    <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab"
+                                        href="#custom-nav-profile" role="tab" aria-controls="custom-nav-profile"
+                                        aria-selected="false">Confusion Matrix</a>
+                                </div>
+                            </nav>
+                            <div class="tab-content pl-3 pt-2 text-center" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="custom-nav-home" role="tabpanel"
+                                    aria-labelledby="custom-nav-home-tab">
+                                    <h4><br/>Percobaan CNN add model Xception</h4>
+                                    <img src="/static/hasilE.png" alt="" >
+                                    <h4><br/>Percobaan CNN add model VGG16</h4>
+                                    <img src="/static/hasilD.png" alt="" >
+                                    <h4><br/>Percobaan CNN add model NASNetMobile</h4>
+                                    <img src="/static/hasilF.png" alt="">
+                                </div>
+                                <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel"
+                                    aria-labelledby="custom-nav-profile-tab">
+                                    <h4><br/>Hasil Prediksi Model CNN add Model Xception</h4>
+                                    <img src="/static/cmE.png" alt="" height="400px" width="400px">
+                                    <h4><br/>Hasil Prediksi Model CNN add Model VGG16</h4>
+                                    <img src="/static/cmD.png" alt="" height="400px" width="400px">
+                                    <h4><br/>Hasil Prediksi Model CNN add Model NASNetMobile</h4>
+                                    <img src="/static/cmF.png" alt="" height="400px" width="400px">
+                                </div>
+                                <div class="tab-pane fade" id="custom-nav-contact" role="tabpanel"
+                                    aria-labelledby="custom-nav-contact-tab">
+                                    <img src="/static/Picture3.png" alt="" height="400px" width="400px">
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-                    
-        <!--/.col-->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-link text-success border-success"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Accuracy Xception</div>
+                                <div class="stat-digit">97.00%</div>
+                                <div class="stat-text">Accuracy VGG16</div>
+                                <div class="stat-digit">95.00%</div>
+                                <div class="stat-text">Accuracy NASNetMobile</div>
+                                <div class="stat-digit">93.00%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-link text-success border-success"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Precision Xception</div>
+                                <div class="stat-digit">98.00%</div>
+                                <div class="stat-text">Precision VGG16</div>
+                                <div class="stat-digit">98.00%</div>
+                                <div class="stat-text">Precision NASNetMobile</div>
+                                <div class="stat-digit">93.00%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-link text-success border-success"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Recall Xception</div>
+                                <div class="stat-digit">96.00%</div>
+                                <div class="stat-text">Recall VGG16</div>
+                                <div class="stat-digit">91.00%</div>
+                                <div class="stat-text">Recall NASNetMobile</div>
+                                <div class="stat-digit">91.00%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-link text-success border-success"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">F1 Score Xception</div>
+                                <div class="stat-digit">97.00%</div>
+                                <div class="stat-text">F1 Score VGG16</div>
+                                <div class="stat-digit">95.00%</div>
+                                <div class="stat-text">F1 Score NASNetMobile</div>
+                                <div class="stat-digit">92.00%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.col-->
 
 
-        <!--/.col-->
+    <!--/.col-->
 
 
-        <!--/.col-->
+    <!--/.col-->
 
 
-        <!--/.col-->
+    <!--/.col-->
 
 
-        <!-- Right Panel -->
+    <!-- Right Panel -->
 
-        <script src="/static/pestectionadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-        <script src="/static/pestectionadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
-        <script src="/static/pestectionadmin/assets/js/popper.min.js"></script>
-        <script src="/static/pestectionadmin/assets/js/plugins.js"></script>
-        <script src="/static/pestectionadmin/assets/js/main.js"></script>
-        <script src="/static/pestectionadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="/static/pestectionadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="/static/pestectionadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="/static/pestectionadmin/assets/js/popper.min.js"></script>
+    <script src="/static/pestectionadmin/assets/js/plugins.js"></script>
+    <script src="/static/pestectionadmin/assets/js/main.js"></script>
+    <script src="/static/pestectionadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
 
 
-        <script src="/static/pestectionadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
-        <script src="/static/pestectionadmin/assets/js/dashboard.js"></script>
-        <script src="/static/pestectionadmin/assets/js/widgets.js"></script>
-        <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.js"></script>
-        <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-        <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.sampledata.js">
-        </script>
-        <script src="/static/pestectionadmin/assets/js/lib/vector-map/country/jquery.vmap.world.js">
-        </script>
-        <script>
-            (function ($) {
-                "use strict";
+    <script src="/static/pestectionadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="/static/pestectionadmin/assets/js/dashboard.js"></script>
+    <script src="/static/pestectionadmin/assets/js/widgets.js"></script>
+    <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.js"></script>
+    <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+    <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.sampledata.js">
+    </script>
+    <script src="/static/pestectionadmin/assets/js/lib/vector-map/country/jquery.vmap.world.js">
+    </script>
+    <script>
+        (function ($) {
+            "use strict";
 
-                jQuery('#vmap').vectorMap({
-                    map: 'world_en',
-                    backgroundColor: null,
-                    color: '#ffffff',
-                    hoverOpacity: 0.7,
-                    selectedColor: '#1de9b6',
-                    enableZoom: true,
-                    showTooltip: true,
-                    values: sample_data,
-                    scaleColors: ['#1de9b6', '#03a9f5'],
-                    normalizeFunction: 'polynomial'
-                });
-            })(jQuery);
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script>
-            const form = document.querySelector("form");
-            const confidencenasnet = document.getElementById("confidencenasnet");
-            const predictionnasnet = document.getElementById("predictionnasnet");
-            const confidencevgg = document.getElementById("confidencevgg");
-            const predictionvgg = document.getElementById("predictionvgg");
-            const confidenceexception= document.getElementById("confidenceexception");
-            const predictionxception = document.getElementById("predictionxception");
-            const confidencecnn = document.getElementById("confidencecnn");
-            const predictioncnn = document.getElementById("predictioncnn");
-    
-            form.addEventListener("submit", (e) => {
-            confidencenasnet.innerHTML = '';
-            predictionnasnet.innerHTML = '';
-            confidencevgg.innerHTML = '';
-            predictionvgg.innerHTML = '';
-            confidenceexception.innerHTML = '';
-            predictionxception.innerHTML = '';
-            confidencecnn.innerHTML = '';
-            predictioncnn.innerHTML = '';
-            e.preventDefault();
-            const formData = new FormData(form);
-            axios
-                .post("/submit", formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-                })
-                .then((res) => {
-                document.getElementById("image").src = `${res.data.data.filename}`;
-                confidencenasnet.append(res.data.data.confidencenasnet);
-                predictionnasnet.append(res.data.data.predictionnasnet);
-                confidencevgg.append(res.data.data.confidencevgg);
-                predictionvgg.append(res.data.data.predictionvgg);
-                confidencexception.append(res.data.data.confidenceexception);
-                predictionxception.append(res.data.data.predictionxception);
-                confidencecnn.append(res.data.data.confidencecnn);
-                predictioncnn.append(res.data.data.predictioncnn);
-                console.log(res.data.data);
-                })
-                .catch((err) => {
-                console.log(err);
-                });
+            jQuery('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
             });
-        </script>
+        })(jQuery);
+    </script>
+
 </body>
 
-
-
-    </html>
+</html>
