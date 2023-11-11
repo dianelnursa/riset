@@ -34,11 +34,18 @@ def allowed_file(filename):
 # routes
 @app.route("/", methods=['GET', 'POST'])
 def main():
-	return render_template("developer.html")
-
+	developer_info = {'name': 'Dian Budi Elnursa', 'photo_url': '/static/pestectionadmin/images/photo.jpg','linkedin': 'https://www.linkedin.com/in/dian-budi-e-326760131?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'youtube': 'https://youtube.com/@060_dianelnursa4?si=SYTWDA8lABWj8pSm'}
+	return render_template("developer.html", developer_info=developer_info)
+	
+#@app.route("/", methods=['GET', 'POST'])
+#def main():
+	#return render_template("cnn.html")
+	
 @app.route("/classification", methods = ['GET', 'POST'])
 def classification():
 	return render_template("classifications.html")
+
 
 @app.route('/submit', methods=['POST'])
 def predict():
