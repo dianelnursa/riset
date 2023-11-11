@@ -32,8 +32,8 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # routes
-@app.route("/developer", methods=['GET', 'POST'])
-def developer():
+@app.route("/", methods=['GET', 'POST'])
+def main():
 	return render_template("developer.html")
 
 @app.route("/classification", methods = ['GET', 'POST'])
