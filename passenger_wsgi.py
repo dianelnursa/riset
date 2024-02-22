@@ -1,12 +1,9 @@
-import importlib.util
+import imp
 import os
 import sys
 
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-spec = importlib.util.spec_from_file_location('wsgi', 'apps.py')
-wsgi = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(wsgi)
-
+wsgi = imp.load_source('wsgi', 'apps.py')
 application = wsgi.app
