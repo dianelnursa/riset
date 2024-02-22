@@ -5,5 +5,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-wsgi = importlib.util.load_source('wsgi', 'apps.py')
+spec = importlib.util.spec_from_file_location('wsgi', 'apps.py')
+wsgi = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(wsgi)
+
 application = wsgi.app
