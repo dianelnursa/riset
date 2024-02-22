@@ -34,18 +34,25 @@ def allowed_file(filename):
 # routes
 @app.route("/", methods=['GET', 'POST'])
 def main():
-	developer_info = {'name': 'Dian Budi Elnursa', 'photo_url': '/static/pestectionadmin/images/photo.jpg','linkedin': 'https://s.id/LinkedIn-dian',
-    'youtube': 'https://s.id/YouTube-dian'}
-	return render_template("developer.html", developer_info=developer_info)
+	return render_template("beranda.html")
+
+@app.route("/belajar", methods=['GET', 'POST'])
+def belajar():
+	return render_template("belajar.html")
 	
 #@app.route("/", methods=['GET', 'POST'])
-#def main():
+#def main():v 
 	#return render_template("cnn.html")
 	
 @app.route("/classification", methods = ['GET', 'POST'])
 def classification():
 	return render_template("classifications.html")
 
+@app.route("/tentang", methods=['GET', 'POST'])
+def tentang():
+    developer_info = {'name': ': Dian Budi Elnursa', 'university': ': Universitas Trunojoyo', 'major': ': Pendidikan Informatika','photo_url': '/static/pestectionadmin/images/photo.jpg','linkedin': ': https://s.id/LinkedIn-dian',
+    'youtube': ': https://s.id/YouTube-dian'}
+    return render_template("developer.html", developer_info=developer_info)
 
 @app.route('/submit', methods=['POST'])
 def predict():
