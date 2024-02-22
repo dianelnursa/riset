@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sistem Deteksi Simplisia Fructus</title>
+    <meta name="description" content="Sistem Deteksi Simplisia Fructus">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/normalize.css">
+    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/pestectionadmin/assets/scss/style.css">
+    <link rel="stylesheet" href="/static/pestectionadmin/assets/scss/widgets.css">
+
+    <link href="/static/pestectionadmin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+<style>
+    .img-fluid {
+        max-width: auto;
+        height: auto;
+    }
+</style>
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./"><img src="/static/pestectionadmin/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="/static/pestectionadmin/images/logo2.png" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ url_for('main') }}"> <i class="menu-icon fa fa-home"></i>Beranda</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-book"></i>Belajar
+                            Fructus </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('classification') }}"> <i class="menu-icon fa fa-image"></i>Image
+                            Classification </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('tentang') }}"> <i class="menu-icon fa fa-info"></i>Tentang Pengembang</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                    </div>
+                </div>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                    </ol>
+                  
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="/static/pestectionadmin/images/beranda.png" alt="Gambar 1" class="img-fluid">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/static/pestectionadmin/images/beranda(1).png" alt="Gambar 2" class="img-fluid">
+                      </div>
+                    </div>
+                  
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+        <!-- Beranda Section -->
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Informasi Aplikasi</strong>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Sistem Deteksi Simplisia Fructus adalah Aplikasi berbasis web yang fleksibel dirancang sebagai media pembelajaran Farmakognosi 
+                                    untuk membantu siswa/i SMKS Kesehatan Yannas Husada Bangkalan dalam mengidentifikasi Simplisia Fructus menggunakan teknologi Deep Learning.
+                                </p>
+                                <p>
+                                    Untuk memulai pembelajaran, silakan pilih menu <strong>"Belajar Fructus"</strong> atau menu
+                                    <strong>"Image Classification"</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .animated -->
+        </div><!-- /.content -->
+
+        <!-- Right Panel -->
+        <script src="/static/pestectionadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="/static/pestectionadmin/assets/js/plugins.js"></script>
+        <script src="/static/pestectionadmin/assets/js/main.js"></script>
+
+</body>
+
+</html>
