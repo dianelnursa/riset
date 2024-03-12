@@ -18,6 +18,7 @@ from keras.preprocessing import image
 from flask_cors import CORS
 
 app = Flask(__name__)
+app.secret_key="qwerty098765421"
 
 # load model for prediction
 modelnasnet = load_model("NASNET-fructus.h5")
