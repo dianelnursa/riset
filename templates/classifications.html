@@ -114,10 +114,27 @@
                         <p> Capsici Frutescentis Fructus/Cabai Rawit</p>
                         <p> Tamarindus Indica Fructus/Asem Jawa</p>
                         <form action="/submit" method="post" enctype="multipart/form-data">
+                            <div>
+                                <i>*pilih file dengan ekstensi .png, .jpg, .jpeg, .gif, .tiff, .webp, .jfif</i>
+                            </div>
+                            <br>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
                                 <div class="col-12 col-md-9"><input type="file" id="file" name="file" class="form-control-file">
                                 </div>
+                            </div>
+                            <div>
+                                {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                {% for message in messages %}
+                                <div class="alert alert-warning" role="alert">
+                                    <div>
+                                      {{message}}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                                {% endwith %}
                             </div>
                             <div class="row">
                                 <div class="col-md-3" style="margin-left: 15px;"></div>
