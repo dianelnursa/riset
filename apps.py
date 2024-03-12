@@ -56,25 +56,19 @@ def tentang():
 
 @app.route('/submit', methods=['POST'])
 def predict():
-    if 'file' not in request.files:
-        resp = jsonify({'message': 'No image in the request'})
-        resp.status_code = 400
-        return resp
     files = request.files.getlist('file')
     filename = "temp_image.png"
-    errors = {}
+    # errors = {}
     success = False
     for file in files:
         if file and allowed_file(file.filename):
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             success = True
         else:
-            errors["message"] = 'File type of {} is not allowed'.format(file.filename)
-
-    if not success:
-        resp = jsonify(errors)
-        resp.status_code = 400
-        return resp
+            flash("Anda Belum Mengunggah File atau Ekstensi File Salah, \
+                  Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di Atas!")
+            return render_template("classifications.html")
+        
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
     # convert image to RGB
