@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, flash
 from keras.models import load_model
 
 from keras.utils import load_img, img_to_array
@@ -18,10 +18,11 @@ from keras.preprocessing import image
 from flask_cors import CORS
 
 app = Flask(__name__)
+app.secret_key="qwerty098765421"
 
 # load model for prediction
-modelnasnet = load_model("NASNET-fructus.h5")
-modelvgg = load_model("VGG16-fructus.h5")
+#modelnasnet = load_model("NASNET-fructus.h5")
+#modelvgg = load_model("VGG16-fructus.h5")
 modelxception = load_model("Xception-fructus.h5")
 
 UPLOAD_FOLDER = 'static/uploads/'
@@ -35,46 +36,42 @@ def allowed_file(filename):
 @app.route("/", methods=['GET', 'POST'])
 def main():
 	return render_template("beranda.html")
-
+# Define the Simplisia Fructus types
 @app.route("/belajar", methods=['GET', 'POST'])
 def belajar():
 	return render_template("belajar.html")
+
+@app.route("/arsip", methods=['GET', 'POST'])
+def arsip():
+	return render_template("arsip.html", simplisia_fructus_types=simplisia_fructus_types)
 	
 #@app.route("/", methods=['GET', 'POST'])
 #def main():v 
 	#return render_template("cnn.html")
+
+@app.route("/tentang", methods=['GET', 'POST'])
+def tentang():
+	return render_template("developer.html")
 	
 @app.route("/classification", methods = ['GET', 'POST'])
 def classification():
 	return render_template("classifications.html")
 
-@app.route("/tentang", methods=['GET', 'POST'])
-def tentang():
-    developer_info = {'name': ': Dian Budi Elnursa', 'university': ': Universitas Trunojoyo', 'major': ': Pendidikan Informatika','photo_url': '/static/pestectionadmin/images/photo.jpg','linkedin': ': https://s.id/LinkedIn-dian',
-    'youtube': ': https://s.id/YouTube-dian'}
-    return render_template("developer.html", developer_info=developer_info)
-
 @app.route('/submit', methods=['POST'])
 def predict():
-    if 'file' not in request.files:
-        resp = jsonify({'message': 'No image in the request'})
-        resp.status_code = 400
-        return resp
     files = request.files.getlist('file')
     filename = "temp_image.png"
-    errors = {}
+    # errors = {}
     success = False
     for file in files:
         if file and allowed_file(file.filename):
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             success = True
         else:
-            errors["message"] = 'File type of {} is not allowed'.format(file.filename)
-
-    if not success:
-        resp = jsonify(errors)
-        resp.status_code = 400
-        return resp
+            flash('Anda Belum Mengunggah File atau Ekstensi File Salah, \
+                  Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di Atas!')
+            return render_template("classifications.html")
+        
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
     # convert image to RGB
@@ -93,8 +90,8 @@ def predict():
     images = np.vstack([x])
 
     # predict
-    prediction_array_nasnet = modelnasnet.predict(images)
-    prediction_array_vgg = modelvgg.predict(images)
+    #prediction_array_nasnet = modelnasnet.predict(images)
+    #prediction_array_vgg = modelvgg.predict(images)
     prediction_array_xception = modelxception.predict(images)
 
     # prepare api response

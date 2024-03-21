@@ -12,20 +12,20 @@
     <title>Sistem Deteksi Simplisia Fructus</title>
     <meta name="description" content="Sistem Deteksi Simplisia Fructus">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/normalize.css">
-    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="/static/pestectionadmin/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/normalize.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/cs-skin-elastic.css">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="/static/pestectionadmin/assets/scss/style.css">
-    <link rel="stylesheet" href="/static/pestectionadmin/assets/scss/widgets.css">
-    <link href="/static/pestectionadmin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/scss/style.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/scss/widgets.css">
+    <link href="/static/fructusadmin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -46,8 +46,9 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="/static/pestectionadmin/images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="/static/pestectionadmin/images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="/static/fructusadmin/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="/static/fructusadmin/images/logo2.png"
+                        alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -88,7 +89,7 @@
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="/static/pestectionadmin/images/admin.jpg"
+                            <img class="user-avatar rounded-circle" src="/static/fructusadmin/images/admin.jpg"
                                 alt="User Avatar">
                         </a>
                     </div>
@@ -97,33 +98,55 @@
         </header><!-- /header -->
         <!-- Header-->
         <div class="content mt-3">
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Deteksi Jenis Simplisia Fructus</h4>
-                    </div>
-                    <!--/.col-->
-                    <div class="card-body">
-                        <!-- Information about types of Simplisia Fructus -->
-                        <p> Aplikasi saat ini terbatas hanya dapat mendeteksi 7 jenis simplisia fructus meliputi:</p>
-                        <p> Amomi Fructus/Kapulaga</p>
-                        <p> Cumini Fructus/Jinten</p>
-                        <p> Piperis Albi Ftuctus/Lada Putih</p>
-                        <p> Piperis Nigri Fructus/Lada Hitam</p>
-                        <p> Piper Retrofractum Fructus/Cabai Jawa</p>
-                        <p> Capsici Frutescentis Fructus/Cabai Rawit</p>
-                        <p> Tamarindus Indica Fructus/Asem Jawa</p>
-                        <form action="/submit" method="post" enctype="multipart/form-data">
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="file" name="file" class="form-control-file">
+            <div class="animated fadeIn">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Deteksi Jenis Simplisia Fructus</strong>
+                        </div>
+                        <!--/.col-->
+                        <div class="container">
+                            <!-- Information about types of Simplisia Fructus -->
+                            <p> Aplikasi saat ini terbatas hanya dapat mendeteksi 7 jenis simplisia fructus meliputi:
+                            </p>
+                            <p> Amomi Fructus/Kapulaga</p>
+                            <p> Cumini Fructus/Jinten</p>
+                            <p> Piperis Albi Ftuctus/Lada Putih</p>
+                            <p> Piperis Nigri Fructus/Lada Hitam</p>
+                            <p> Piper Retrofractum Fructus/Cabai Jawa</p>
+                            <p> Capsici Frutescentis Fructus/Cabai Rawit</p>
+                            <p> Tamarindus Indica Fructus/Asem Jawa</p>
+                            <form action="/submit" method="post" enctype="multipart/form-data">
+                                <div>
+                                    <i>*pilih file dengan ekstensi .png, .jpg, .jpeg, .gif, .tiff, .webp, .jfif</i>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3" style="margin-left: 15px;"></div>
-                                <button type="submit" class="btn btn-primary" value="Upload">Deteksi</button>
-                            </div>
-                        </form>
+                                <br>
+                                <div class="row form-group">
+                                    <div class="col-sm-3 col-md-3 col-lg-3"><label for="file-input"
+                                            class=" form-control-label">File input</label></div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9"><input type="file" id="file" name="file"
+                                            class="form-control-file">
+                                    </div>
+                                </div>
+                                <div>
+                                    {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                    {% for message in messages %}
+                                    <div class="alert alert-warning" role="alert">
+                                        <div>
+                                            {{message}}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endwith %}
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-3 col-lg-3" style="margin-left: 15px;"></div>
+                                    <button type="submit" class="btn btn-primary" value="Upload">Deteksi</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,18 +162,6 @@
                         <!-- <h4> Confidence : <i> {{confidenceexception}} </i></h4><br> -->
                         <h4> Hasil Deteksi : <i> {{predictionxception}} </i></h4>
                         <h4> Akurasi : <i> {{confidenceexception}} </i></h4><br>
-                        {% endif %}
-                        {% if predictionvgg %}
-                        <h4> CNN add Model VGG16</h4>
-                        <!-- <h4> Confidence : <i> {{confidencvgg}} </i></h4><br> -->
-                        <h4>Hasil Deteksi : <i> {{predictionvgg}} </i></h4>
-                        <h4> Akurasi : <i> {{confidencvgg}} </i></h4><br>
-                        {% endif %}
-                        {% if predictionnasnet %}
-                        <h4> CNN add Model NASNetMobile</h4>
-                        <!-- <h4> Confidence : <i> {{confidencenasnet}} </i></h4><br> -->
-                        <h4>Hasil Deteksi : <i> {{predictionnasnet}} </i></h4>
-                        <h4> Akurasi : <i> {{confidencenasnet}} </i></h4><br>
                         {% endif %}
                     </div>
                 </div>
@@ -170,23 +181,23 @@
 
         <!-- Right Panel -->
 
-        <script src="/static/pestectionadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="/static/fructusadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-        <script src="/static/pestectionadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
-        <script src="/static/pestectionadmin/assets/js/popper.min.js"></script>
-        <script src="/static/pestectionadmin/assets/js/plugins.js"></script>
-        <script src="/static/pestectionadmin/assets/js/main.js"></script>
-        <script src="/static/pestectionadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
+        <script src="/static/fructusadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="/static/fructusadmin/assets/js/popper.min.js"></script>
+        <script src="/static/fructusadmin/assets/js/plugins.js"></script>
+        <script src="/static/fructusadmin/assets/js/main.js"></script>
+        <script src="/static/fructusadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
 
 
-        <script src="/static/pestectionadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
-        <script src="/static/pestectionadmin/assets/js/dashboard.js"></script>
-        <script src="/static/pestectionadmin/assets/js/widgets.js"></script>
-        <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.js"></script>
-        <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-        <script src="/static/pestectionadmin/assets/js/lib/vector-map/jquery.vmap.sampledata.js">
+        <script src="/static/fructusadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
+        <script src="/static/fructusadmin/assets/js/dashboard.js"></script>
+        <script src="/static/fructusadmin/assets/js/widgets.js"></script>
+        <script src="/static/fructusadmin/assets/js/lib/vector-map/jquery.vmap.js"></script>
+        <script src="/static/fructusadmin/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+        <script src="/static/fructusadmin/assets/js/lib/vector-map/jquery.vmap.sampledata.js">
         </script>
-        <script src="/static/pestectionadmin/assets/js/lib/vector-map/country/jquery.vmap.world.js">
+        <script src="/static/fructusadmin/assets/js/lib/vector-map/country/jquery.vmap.world.js">
         </script>
         <script>
             (function ($) {
@@ -213,45 +224,45 @@
             const predictionnasnet = document.getElementById("predictionnasnet");
             const confidencevgg = document.getElementById("confidencevgg");
             const predictionvgg = document.getElementById("predictionvgg");
-            const confidenceexception= document.getElementById("confidenceexception");
+            const confidenceexception = document.getElementById("confidenceexception");
             const predictionxception = document.getElementById("predictionxception");
             const confidencecnn = document.getElementById("confidencecnn");
             const predictioncnn = document.getElementById("predictioncnn");
-    
+
             form.addEventListener("submit", (e) => {
-            confidencenasnet.innerHTML = '';
-            predictionnasnet.innerHTML = '';
-            confidencevgg.innerHTML = '';
-            predictionvgg.innerHTML = '';
-            confidenceexception.innerHTML = '';
-            predictionxception.innerHTML = '';
-            confidencecnn.innerHTML = '';
-            predictioncnn.innerHTML = '';
-            e.preventDefault();
-            const formData = new FormData(form);
-            axios
-                .post("/submit", formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-                })
-                .then((res) => {
-                document.getElementById("image").src = `${res.data.data.filename}`;
-                confidencenasnet.append(res.data.data.confidencenasnet);
-                predictionnasnet.append(res.data.data.predictionnasnet);
-                confidencevgg.append(res.data.data.confidencevgg);
-                predictionvgg.append(res.data.data.predictionvgg);
-                confidencexception.append(res.data.data.confidenceexception);
-                predictionxception.append(res.data.data.predictionxception);
-                confidencecnn.append(res.data.data.confidencecnn);
-                predictioncnn.append(res.data.data.predictioncnn);
-                console.log(res.data.data);
-                })
-                .catch((err) => {
-                console.log(err);
-                });
+                confidencenasnet.innerHTML = '';
+                predictionnasnet.innerHTML = '';
+                confidencevgg.innerHTML = '';
+                predictionvgg.innerHTML = '';
+                confidenceexception.innerHTML = '';
+                predictionxception.innerHTML = '';
+                confidencecnn.innerHTML = '';
+                predictioncnn.innerHTML = '';
+                e.preventDefault();
+                const formData = new FormData(form);
+                axios
+                    .post("/submit", formData, {
+                        headers: {
+                            "Content-Type": "multipart/form-data",
+                        },
+                    })
+                    .then((res) => {
+                        document.getElementById("image").src = `${res.data.data.filename}`;
+                        confidencenasnet.append(res.data.data.confidencenasnet);
+                        predictionnasnet.append(res.data.data.predictionnasnet);
+                        confidencevgg.append(res.data.data.confidencevgg);
+                        predictionvgg.append(res.data.data.predictionvgg);
+                        confidencexception.append(res.data.data.confidenceexception);
+                        predictionxception.append(res.data.data.predictionxception);
+                        confidencecnn.append(res.data.data.confidencecnn);
+                        predictioncnn.append(res.data.data.predictioncnn);
+                        console.log(res.data.data);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
             });
         </script>
 </body>
+
 </html>
-            

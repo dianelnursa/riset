@@ -1,24 +1,25 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>Sistem Deteksi Simplisia Fructus</title>
-   <meta name="description" content="Sistem Deteksi Simplisia Fructus">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sistem Deteksi Simplisia Fructus</title>
+    <meta name="description" content="Sistem Deteksi Simplisia Fructus">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <link rel="stylesheet" href="/static/pestectionadmin/assets/css/normalize.css">
-   <link rel="stylesheet" href="/static/pestectionadmin/assets/css/bootstrap.min.css">
-   <link rel="stylesheet" href="/static/pestectionadmin/assets/css/font-awesome.min.css">
-   <link rel="stylesheet" href="/static/pestectionadmin/assets/css/themify-icons.css">
-   <link rel="stylesheet" href="/static/pestectionadmin/assets/css/flag-icon.min.css">
-   <link rel="stylesheet" href="/static/pestectionadmin/assets/css/cs-skin-elastic.css">
-   <link rel="stylesheet" href="/static/pestectionadmin/assets/scss/style.css">
-   <link rel="stylesheet" href="/static/pestectionadmin/assets/scss/widgets.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/normalize.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/scss/style.css">
+    <link rel="stylesheet" href="/static/fructusadmin/assets/scss/widgets.css">
 
-   <link href="/static/pestectionadmin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href="/static/fructusadmin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
-   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
 <style>
@@ -29,98 +30,106 @@
         object-fit: cover;
     }
 </style>
+
 <body>
-   <!-- Left Panel -->
-   <aside id="left-panel" class="left-panel">
-       <nav class="navbar navbar-expand-sm navbar-default">
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
 
-           <div class="navbar-header">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
-                   aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                   <i class="fa fa-bars"></i>
-               </button>
-               <a class="navbar-brand" href="./"><img src="/static/pestectionadmin/images/logo.png" alt="Logo"></a>
-               <a class="navbar-brand hidden" href="./"><img src="/static/pestectionadmin/images/logo2.png" alt="Logo"></a>
-           </div>
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./"><img src="/static/fructusadmin/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="/static/fructusadmin/images/logo2.png"
+                        alt="Logo"></a>
+            </div>
 
-           <div id="main-menu" class="main-menu collapse navbar-collapse">
-               <ul class="nav navbar-nav">
-                   <li>
-                       <a href="{{ url_for('main') }}"> <i class="menu-icon fa fa-home"></i>Beranda</a>
-                   </li>
-                   <li>
-                       <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-book"></i>Belajar
-                           Fructus </a>
-                   </li>
-                   <li>
-                       <a href="{{ url_for('classification') }}"> <i class="menu-icon fa fa-image"></i>Image
-                           Classification </a>
-                   </li>
-                   <li>
-                       <a href="{{ url_for('tentang') }}"> <i class="menu-icon fa fa-info"></i>Tentang Pengembang</a>
-                   </li>
-               </ul>
-           </div><!-- /.navbar-collapse -->
-       </nav>
-   </aside><!-- /#left-panel -->
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ url_for('main') }}"> <i class="menu-icon fa fa-home"></i>Beranda</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-book"></i>Belajar
+                            Fructus </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('classification') }}"> <i class="menu-icon fa fa-image"></i>Image
+                            Classification </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('tentang') }}"> <i class="menu-icon fa fa-info"></i>Tentang Pengembang</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
 
-   <!-- Left Panel -->
+    <!-- Left Panel -->
 
-   <!-- Right Panel -->
+    <!-- Right Panel -->
 
-   <div id="right-panel" class="right-panel">
-       <!-- Header-->
-       <header id="header" class="header">
-           <div class="header-menu">
-               <div class="col-sm-7">
-                   <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                   <div class="header-left">
-                   </div>
-               </div>
-               <div class="col-sm-5">
-                   <div class="user-area dropdown float-right">
-                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">
-                           <img class="user-avatar rounded-circle" src="/static/pestectionadmin/images/admin.jpg" alt="User Avatar">
-                       </a>
-                   </div>
-               </div>
-           </div>
-       </header><!-- /header -->
-       <!-- Profile Pengembang Section -->
-       <div class="content">
-        <div class="animated fadeIn">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <strong class="card-title">Profil Pengembangan</strong>
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
                     </div>
-                   <div class="card-body">
-                       <div class="row">
-                           <div class="col-sm-3">
-                            <img src="{{ developer_info.photo_url }}" alt="{{ developer_info.name }} Photo" class="circle-img mr-3">
-                           </div>
-                           <div class="col-md-9">
-                               <div class="row">
-                                   <div class="col-sm-3">Nama Pengembang</div>
-                                   <div class="col-sm-9">{{ developer_info.name }}</div>
-                                   <div class="col-sm-3">Asal PT</div>
-                                   <div class="col-sm-9">{{ developer_info.university }}</div>
-                                   <div class="col-sm-3">Jurusan</div>
-                                   <div class="col-sm-9">{{ developer_info.major }}</div>
-                                   <div class="col-sm-3">Akun YouTube</div>
-                                   <div class="col-sm-9"><a href="{{ developer_info.youtube }}" target="_blank">{{ developer_info.youtube }}</a></div>
-                                   <div class="col-sm-3">Akun LinkedIn</div>
-                                   <div class="col-sm-9"><a href="{{ developer_info.linkedin }}" target="_blank">{{ developer_info.linkedin }}</a></div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <!-- Right Panel -->
-           <script src="/static/pestectionadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-           <script src="/static/pestectionadmin/assets/js/plugins.js"></script>
-           <script src="/static/pestectionadmin/assets/js/main.js"></script>
+                </div>
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="/static/fructusadmin/images/admin.jpg"
+                                alt="User Avatar">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Profile Pengembang Section -->
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title mb-3">Informasi Pengembang</strong>
+                            </div>
+                            <div class="card-body w-100 text-center">
+                                <div class="mx-auto d-block">
+                                    <img class="circle-img mr-3" src="/static/fructusadmin/images/photo.jpg" width="300"
+                                        height="300" alt="Card image cap">
+                                </div>
+                                <h5 class="text-sm-center mt-2 mb-1">Dian Budi Elnursa</h5>
+                                <div class="location text-sm-center"></i> Mahasiswa semester jurusan Pendidikan
+                                    Informatika di Universitas Trunojoyo Madura, saat ini sedang menempuh Tugas Akhir
+                                    atau Skripsi </div>
+                                <div class="location text-sm-center"></i> Mari terhubung dan terkoneksi melalui sosial
+                                    media di bawah ini:</div>
+                                <a href="https://youtube.com/@060_dianelnursa4?si=PQb7H5NNmKsFnlQP"><i
+                                        class="fa fa-youtube pr-1" width="10" height="10"></i></a>
+                                <a href="https://www.instagram.com/sadin.el?igsh=OGljYnR4NWZicnN1"><i
+                                        class="fa fa-instagram pr-1"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/in/dian-budi-e-326760131?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                        class="fa fa-linkedin pr-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .row -->
+        </div><!-- .animated -->
+    </div><!-- .content -->
+    <!-- Right Panel -->
+    <script src="/static/fructusadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="/static/fructusadmin/assets/js/plugins.js"></script>
+    <script src="/static/fructusadmin/assets/js/main.js"></script>
 </body>
+
 </html>
