@@ -40,6 +40,7 @@ def main():
 @app.route("/belajar", methods=['GET', 'POST'])
 def belajar():
 	return render_template("belajar.html")
+
 	
 #@app.route("/", methods=['GET', 'POST'])
 #def main():v 
@@ -64,8 +65,8 @@ def predict():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             success = True
         else:
-            flash("Anda Belum Mengunggah File atau Ekstensi File Salah, \
-                  Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di Atas!")
+            flash('Anda Belum Mengunggah File atau Ekstensi File Salah, \
+                  Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di Atas!')
             return render_template("classifications.html")
         
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
