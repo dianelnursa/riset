@@ -21,8 +21,8 @@ app = Flask(__name__)
 app.secret_key="qwerty098765421"
 
 # load model for prediction
-#modelnasnet = load_model("NASNET-fructus.h5")
-#modelvgg = load_model("VGG16-fructus.h5")
+modelnasnet = load_model("NASNET-fructus.h5")
+modelvgg = load_model("VGG16-fructus.h5")
 modelxception = load_model("Xception-fructus.h5")
 
 UPLOAD_FOLDER = 'static/uploads/'
@@ -36,7 +36,7 @@ def allowed_file(filename):
 @app.route("/", methods=['GET', 'POST'])
 def main():
 	return render_template("beranda.html")
-# Define the Simplisia Fructus types
+
 @app.route("/belajar", methods=['GET', 'POST'])
 def belajar():
 	return render_template("belajar.html")
@@ -45,16 +45,16 @@ def belajar():
 #@app.route("/", methods=['GET', 'POST'])
 #def main():v 
 	#return render_template("cnn.html")
-
-@app.route("/tentang", methods=['GET', 'POST'])
-def tentang():
-	return render_template("developer.html")
 	
 @app.route("/classification", methods = ['GET', 'POST'])
 def classification():
 	return render_template("classifications.html")
 
+@app.route("/tentang", methods = ['GET', 'POST'])
+def tentang():
+	return render_template("developer.html")
 @app.route('/submit', methods=['POST'])
+
 def predict():
     files = request.files.getlist('file')
     filename = "temp_image.png"
@@ -87,8 +87,8 @@ def predict():
     images = np.vstack([x])
 
     # predict
-    #prediction_array_nasnet = modelnasnet.predict(images)
-    #prediction_array_vgg = modelvgg.predict(images)
+    prediction_array_nasnet = modelnasnet.predict(images)
+    prediction_array_vgg = modelvgg.predict(images)
     prediction_array_xception = modelxception.predict(images)
 
     # prepare api response
