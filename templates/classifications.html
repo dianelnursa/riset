@@ -98,52 +98,55 @@
         </header><!-- /header -->
         <!-- Header-->
         <div class="content mt-3">
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Deteksi Jenis Simplisia Fructus</h4>
-                    </div>
-                    <!--/.col-->
-                    <div class="card-body">
-                        <!-- Information about types of Simplisia Fructus -->
-                        <p> Aplikasi saat ini terbatas hanya dapat mendeteksi 7 jenis simplisia fructus meliputi:</p>
-                        <p> Amomi Fructus/Kapulaga</p>
-                        <p> Cumini Fructus/Jinten</p>
-                        <p> Piperis Albi Ftuctus/Lada Putih</p>
-                        <p> Piperis Nigri Fructus/Lada Hitam</p>
-                        <p> Piper Retrofractum Fructus/Cabai Jawa</p>
-                        <p> Capsici Frutescentis Fructus/Cabai Rawit</p>
-                        <p> Tamarindus Indica Fructus/Asem Jawa</p>
-                        <form action="/submit" method="post" enctype="multipart/form-data">
-                            <div>
-                                <i>*pilih file dengan ekstensi .png, .jpg, .jpeg, .gif, .tiff, .webp, .jfif</i>
-                            </div>
-                            <br>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="file-input" class=" form-control-label">File
-                                        input</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="file" name="file"
-                                        class="form-control-file">
+            <div class="animated fadeIn">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Deteksi Jenis Simplisia Fructus</strong>
+                        </div>
+                        <!--/.col-->
+                        <div class="container">
+                            <!-- Information about types of Simplisia Fructus -->
+                            <p> Aplikasi saat ini terbatas hanya dapat mendeteksi 7 jenis simplisia fructus meliputi:
+                            </p>
+                            <p> Amomi Fructus/Kapulaga</p>
+                            <p> Cumini Fructus/Jinten</p>
+                            <p> Piperis Albi Ftuctus/Lada Putih</p>
+                            <p> Piperis Nigri Fructus/Lada Hitam</p>
+                            <p> Piper Retrofractum Fructus/Cabai Jawa</p>
+                            <p> Capsici Frutescentis Fructus/Cabai Rawit</p>
+                            <p> Tamarindus Indica Fructus/Asem Jawa</p>
+                            <form action="/submit" method="post" enctype="multipart/form-data">
+                                <div>
+                                    <i>*pilih file dengan ekstensi .png, .jpg, .jpeg, .gif, .tiff, .webp, .jfif</i>
                                 </div>
-                            </div>
-                            <div>
-                                {% with messages = get_flashed_messages() %}
-                                {% if messages %}
-                                {% for message in messages %}
-                                <div class="alert alert-warning" role="alert">
-                                    <div>
-                                        {{message}}
+                                <br>
+                                <div class="row form-group">
+                                    <div class="col-sm-3 col-md-3 col-lg-3"><label for="file-input"
+                                            class=" form-control-label">File input</label></div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9"><input type="file" id="file" name="file"
+                                            class="form-control-file">
                                     </div>
                                 </div>
-                                {% endfor %}
-                                {% endif %}
-                                {% endwith %}
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3" style="margin-left: 15px;"></div>
-                                <button type="submit" class="btn btn-primary" value="Upload">Deteksi</button>
-                            </div>
-                        </form>
+                                <div>
+                                    {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                    {% for message in messages %}
+                                    <div class="alert alert-warning" role="alert">
+                                        <div>
+                                            {{message}}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endwith %}
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-3 col-lg-3" style="margin-left: 15px;"></div>
+                                    <button type="submit" class="btn btn-primary" value="Upload">Deteksi</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,10 +158,10 @@
                     <div class="card-body text-center">
                         {% if predictionxception %}
                         <img src="{{img_path}}" alt="gambar prediksi" height="50%" width="50%"><br>
-                        <h4> CNN add Model Xception</h4>
-                        <!-- <h4> Confidence : <i> {{confidenceexception}} </i></h4><br> -->
-                        <h4> Hasil Deteksi : <i> {{predictionxception}} </i></h4>
-                        <h4> Akurasi : <i> {{confidenceexception}} </i></h4><br>
+                        <h5> Simplisia fructus yang terdeteksi adalah : <strong> <i> {{predictionxception}} </i> </strong></h5>
+                        <hr>
+                        <h5> Akurasi terdeteksi: <i> {{confidenceexception}} </i></h5><br>
+                        <p> CNN add Model Xception</p>
                         {% endif %}
                     </div>
                 </div>
