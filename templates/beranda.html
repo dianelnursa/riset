@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sistem Deteksi Simplisia Fructus</title>
     <meta name="description" content="Sistem Deteksi Simplisia Fructus">
-    <meta name="viewport" conten t="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="/static/fructusadmin/assets/css/normalize.css">
     <link rel="stylesheet" href="/static/fructusadmin/assets/css/bootstrap.min.css">
@@ -22,6 +22,15 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
+<style>
+    .circle-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 25%;
+        object-fit: cover;
+    }
+</style>
+
 <body>
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
@@ -98,41 +107,45 @@
                 </div>
             </div>
         </header><!-- /header -->
-        <!-- Header-->
-        <!-- Beranda Section -->
-        <div class="content">
+        <!-- Profile Pengembang Section -->
+        <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Informasi Aplikasi</strong>
+                                <strong class="card-title mb-3">Informasi Pengembang</strong>
                             </div>
-                            <div class="card-body">
-                                <p>
-                                    Sistem Deteksi Simplisia Fructus adalah Aplikasi berbasis web yang fleksibel
-                                    dirancang sebagai media pembelajaran Farmakognosi
-                                    untuk membantu siswa/i SMKS Kesehatan Yannas Husada Bangkalan dalam mengidentifikasi
-                                    Simplisia Fructus menggunakan teknologi Deep Learning.
-                                </p>
-                                <p>
-                                    Untuk memulai pembelajaran, silakan pilih menu <strong>"Belajar Fructus"</strong>
-                                    atau menu
-                                    <strong>"Image Classification"</strong>.
-                                </p>
+                            <div class="card-body w-100 text-center">
+                                <div class="mx-auto d-block">
+                                    <img class="circle-img mr-3" src="/static/fructusadmin/images/photo.jpg" width="300"
+                                        height="300" alt="Card image cap">
+                                </div>
+                                <h5 class="text-sm-center mt-2 mb-1">Dian Budi Elnursa</h5>
+                                <div class="location text-sm-center"></i> Mahasiswa semester jurusan Pendidikan
+                                    Informatika di Universitas Trunojoyo Madura, saat ini sedang menempuh Tugas Akhir
+                                    atau Skripsi </div>
+                                <div class="location text-sm-center"></i> Mari terhubung dan terkoneksi melalui sosial
+                                    media di bawah ini:</div>
+                                <a href="https://youtube.com/@060_dianelnursa4?si=PQb7H5NNmKsFnlQP"><i
+                                        class="fa fa-youtube pr-1" width="10" height="10"></i></a>
+                                <a href="https://www.instagram.com/sadin.el?igsh=OGljYnR4NWZicnN1"><i
+                                        class="fa fa-instagram pr-1"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/in/dian-budi-e-326760131?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                        class="fa fa-linkedin pr-1"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div><!-- .animated -->
-        </div><!-- /.content -->
-
-        <!-- Right Panel -->
-        <script src="/static/fructusadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-        <script src="/static/fructusadmin/assets/js/plugins.js"></script>
-        <script src="/static/fructusadmin/assets/js/main.js"></script>
-
+            </div><!-- .row -->
+        </div><!-- .animated -->
+    </div><!-- .content -->
+    <!-- Right Panel -->
+    <script src="/static/fructusadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="/static/fructusadmin/assets/js/plugins.js"></script>
+    <script src="/static/fructusadmin/assets/js/main.js"></script>
 </body>
 
 </html>
