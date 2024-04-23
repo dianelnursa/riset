@@ -16,20 +16,13 @@
     <link rel="stylesheet" href="/static/fructusadmin/assets/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="/static/fructusadmin/assets/scss/style.css">
     <link rel="stylesheet" href="/static/fructusadmin/assets/scss/widgets.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link href="/static/fructusadmin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
-<style>
-    .circle-img {
-        width: 200px;
-        height: 200px;
-        border-radius: 25%;
-        object-fit: cover;
-    }
-</style>
 
 <body>
     <!-- Left Panel -->
@@ -52,7 +45,7 @@
                         <a href="{{ url_for('main') }}"> <i class="menu-icon fa fa-home"></i>Beranda</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-book"></i>Belajar
+                        <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-leanpub"></i>Belajar
                             Fructus </a>
                     </li>
                     <li>
@@ -111,7 +104,7 @@
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Informasi Aplikasi</strong>
