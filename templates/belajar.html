@@ -760,10 +760,31 @@
       </div>
     </div><!-- .animated -->
   </div><!-- .content -->
-  <a href="#" onclick="topFunction()" id="myBtn" title="Go to top"
-    style="position: fixed; bottom: 20px; right: 20px;"><span class='bx bx-arrow-to-top bx-tada'
-      style='color:#14033b; font-size: 2em;'></span>
+    <a href="#" onclick="topFunction()" id="myBtn" title="Go to top"
+    style="position: fixed; bottom: 20px; right: 20px; display: none;">
+    <span class='bx bx-arrow-to-top bx-tada' style='color:#14033b; font-size: 2em;'></span>
   </a>
+
+  <script>
+    // Fungsi untuk menampilkan atau menyembunyikan tombol "Kembali ke atas" berdasarkan posisi scroll
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      // Jika posisi scroll lebih dari 20 piksel dari bagian atas, tampilkan tombol
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        // Jika posisi scroll kurang dari 20 piksel dari bagian atas, sembunyikan tombol
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+    // Fungsi untuk kembali ke atas saat tombol diklik
+    function topFunction() {
+      document.body.scrollTop = 0; // Untuk Safari
+      document.documentElement.scrollTop = 0; // Untuk Chrome, Firefox, IE, dan Opera
+    }
+  </script>
   </div><!-- .right panel -->
 
 
