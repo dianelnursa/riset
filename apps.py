@@ -21,9 +21,7 @@ app = Flask(__name__)
 app.secret_key="qwerty098765421"
 
 # load model for prediction
-modelnasnet = load_model("NASNET-fructus.h5")
-modelvgg = load_model("VGG16-fructus.h5")
-modelxception = load_model("Xception-fructus.h5")
+modelxception = load_model("Xception-fructus-98.19.h5")
 
 UPLOAD_FOLDER = 'static/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -87,17 +85,12 @@ def predict():
     images = np.vstack([x])
 
     # predict
-    prediction_array_nasnet = modelnasnet.predict(images)
-    prediction_array_vgg = modelvgg.predict(images)
+   
     prediction_array_xception = modelxception.predict(images)
 
     # prepare api response
     class_names = ['Amomi Fructus (Kapulaga)', 'Capsici Fructescentis Fructus (Cabai Rawit)', 'Cumini Fructus (Jinten Putih)', 'Piper Retrofractum Fructus (Cabai Jawa)', 'Piperis Albi Fructus (Lada Putih)', 'Piperis Nigri Fructus (Lada Hitam)', 'Tamarindus Indicia Fructus (Asam Jawa)']	
     return render_template("classifications.html", img_path = predict_image_path, 
-                        #predictionnasnet = class_names[np.argmax(prediction_array_nasnet)],
-                        #confidencenasnet = '{:2.0f}%'.format(100 * np.max(prediction_array_nasnet)),
-                        #predictionvgg = class_names[np.argmax(prediction_array_vgg)],
-                        #confidencvgg = '{:2.0f}%'.format(100 * np.max(prediction_array_vgg)),
                         predictionxception = class_names[np.argmax(prediction_array_xception)],
                         confidenceexception = '{:2.0f}%'.format(100 * np.max(prediction_array_xception)),
                         )
