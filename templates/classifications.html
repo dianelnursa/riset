@@ -222,14 +222,8 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
             const form = document.querySelector("form");
-            const confidencenasnet = document.getElementById("confidencenasnet");
-            const predictionnasnet = document.getElementById("predictionnasnet");
-            const confidencevgg = document.getElementById("confidencevgg");
-            const predictionvgg = document.getElementById("predictionvgg");
             const confidenceexception = document.getElementById("confidenceexception");
             const predictionxception = document.getElementById("predictionxception");
-            const confidencecnn = document.getElementById("confidencecnn");
-            const predictioncnn = document.getElementById("predictioncnn");
 
             form.addEventListener("submit", (e) => {
                 confidencenasnet.innerHTML = '';
@@ -250,14 +244,8 @@
                     })
                     .then((res) => {
                         document.getElementById("image").src = `${res.data.data.filename}`;
-                        confidencenasnet.append(res.data.data.confidencenasnet);
-                        predictionnasnet.append(res.data.data.predictionnasnet);
-                        confidencevgg.append(res.data.data.confidencevgg);
-                        predictionvgg.append(res.data.data.predictionvgg);
                         confidencexception.append(res.data.data.confidenceexception);
                         predictionxception.append(res.data.data.predictionxception);
-                        confidencecnn.append(res.data.data.confidencecnn);
-                        predictioncnn.append(res.data.data.predictioncnn);
                         console.log(res.data.data);
                     })
                     .catch((err) => {
