@@ -89,7 +89,7 @@ def predict():
     prediction_array_xception = modelxception.predict(images)
 
     # prepare api response
-    class_names = ['Amomi Fructus (Kapulaga)', 'Capsici Fructescentis Fructus (Cabai Rawit)', 'Cumini Fructus (Jinten Putih)', 'Piper Retrofractum Fructus (Cabai Jawa)', 'Piperis Albi Fructus (Lada Putih)', 'Piperis Nigri Fructus (Lada Hitam)', 'Tamarindus Indicia Fructus (Asam Jawa)', 'Tidak ada fructus yang terdeteksi']	
+    class_names = ['Amomi Fructus (Kapulaga)', 'Capsici Fructescentis Fructus (Cabai Rawit)', 'Cumini Fructus (Jinten Putih)', 'Piper Retrofractum Fructus (Cabai Jawa)', 'Piperis Albi Fructus (Lada Putih)', 'Piperis Nigri Fructus (Lada Hitam)', 'Tamarindus Indicia Fructus (Asam Jawa)', 'Tidak ada fructus yang terdeteksi \n gambar tersebut bukan fructus']	
     return render_template("classifications.html", img_path = predict_image_path, 
                         predictionxception = class_names[np.argmax(prediction_array_xception)],
                         confidenceexception = '{:2.0f}%'.format(100 * np.max(prediction_array_xception)),
