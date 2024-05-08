@@ -58,12 +58,12 @@ def predict():
     errors = {}
     success = False
     for file in files:
-	if file and allowed_file(file.filename):
-		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-		success = True
+        if file and allowed_file(file.filename):
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            success = True
 	else:
-		flash('Anda belum menunggah file/Ekstensi File Salah, Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di atas!')
-		return render_template("classifications.html")
+	    flash('Anda belum menunggah file/Ekstensi File tidak sesuai, Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di atas!')
+	    return render_template("classifications.html")
         
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
