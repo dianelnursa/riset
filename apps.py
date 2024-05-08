@@ -62,9 +62,11 @@ def predict():
         if file and allowed_file(file.filename):
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             success = True
-        else:
-            flash('Anda Belum Mengunggah File atau Ekstensi File Salah, \
-                  Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di Atas!')
+	if not files:
+		flash("Anda Belum Menunggah file, silakan unggah gambar terlebih dahulu!")
+		return render_template("classifications.html")
+        for file in files:
+            flash('Ekstensi File Salah, Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di atas!')
             return render_template("classifications.html")
         
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
@@ -79,10 +81,9 @@ def predict():
 
     # prepare image for prediction
     img = load_img(predict_image_path, target_size=(128, 128, 3))
-    x = img_to_array(img)
-    x = x/127.5-1 
-    x = np.expand_dims(x, axis=0)
-    images = np.vstack([x])
+    x = img_to_array(img) / 255.0
+    x = x.reshape(1,128,128,3)
+    images = np.array(x)
 
     # predict
    
