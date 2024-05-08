@@ -53,17 +53,22 @@ def tentang():
 @app.route('/submit', methods=['POST'])
 
 def predict():
+    #if error
     files = request.files.getlist('file')
+    if not files:
+        flash("Gambar belum dimasukkan. Mohon unggah gambar terlebih dahulu.")
+        return render_template("class-serimpang.html")
+
+    for file in files:
+        if not allowed_file(file.filename):
+            flash("File yang dipilih harus berformat jpg, jpeg, atau png.")
+            return render_template("class-serimpang.html")
+
     filename = "temp_image.png"
-    errors = {}
     success = False
     for file in files:
-        if file and allowed_file(file.filename):
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            success = True
-	else:
-	    flash('Anda belum menunggah file/Ekstensi File tidak sesuai, Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di atas!')
-	    return render_template("classifications.html")
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        success = True
         
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
