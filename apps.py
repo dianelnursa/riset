@@ -54,14 +54,8 @@ def tentang():
 @app.route('/submit', methods=['POST'])
 
 def predict():
+# if errors = {}
     files = request.files.getlist('file')
-    filename = "temp_image.png"
-    # errors = {}
-    success = False
-    for file in files:
-	if allowed_file(file.filename):
-	file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        success = True
     if not files:
 	flash("Anda belum menunggah file, silakan unggah gambar terlebih dahulu!")
 	return render_template("classifications.html")
@@ -69,7 +63,13 @@ def predict():
 	if not allowed_file(file.filename):
 		flash('Ekstensi File Salah, Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di atas!')
         	return render_template("classifications.html")
-        
+    # save
+    filename = "temp_image.png"
+    success = False
+    for file in files:
+	file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        success = True   
+	    
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
     # convert image to RGB
