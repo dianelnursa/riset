@@ -57,12 +57,12 @@ def predict():
     files = request.files.getlist('file')
     if not files:
         flash("Anda belum memasukan gambar, silakan unggah gambar terlebih dahulu!")
-        return render_template("classification.html")
+        return render_template("classifications.html")
 
     for file in files:
         if not allowed_file(file.filename):
             flash("Ekstensi file tidak sesuai, silakan masukan gambar dengan ekstensi sesuai ketentuan diatas!")
-            return render_template("classification.html")
+            return render_template("classifications.html")
 
     filename = "temp_image.png"
     success = False
