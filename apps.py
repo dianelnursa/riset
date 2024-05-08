@@ -58,7 +58,7 @@ def predict():
     # errors = {}
     success = False
     for file in files:
-	if file allowed_file(file.filename):
+	if file and allowed_file(file.filename):
 	file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         success = True
     else:
