@@ -55,7 +55,7 @@ def tentang():
 def predict():
     #if error
     files = request.files.getlist('file')
-    if 'file' not in request.files:
+    if file not in request.files:
         flash("Anda belum memasukan gambar, silakan unggah gambar terlebih dahulu!")
         return render_template("classifications.html")
 
