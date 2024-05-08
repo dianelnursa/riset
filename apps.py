@@ -62,12 +62,12 @@ def predict():
         if file and allowed_file(file.filename):
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             success = True
-	if not files:
-		flash("Anda Belum Menunggah file, silakan unggah gambar terlebih dahulu!")
-		return render_template("classifications.html")
-        for file in files:
-            flash('Ekstensi File Salah, Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di atas!')
-            return render_template("classifications.html")
+    if not files:
+	flash("Anda Belum Menunggah file, silakan unggah gambar terlebih dahulu!")
+	return render_template("classifications.html")
+    for file in files:
+	flash('Ekstensi File Salah, Silahkan Ulangi Unggah File dan Pastikan Ekstensi File Sudah Sesuai Panduan di atas!')
+        return render_template("classifications.html")
         
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
