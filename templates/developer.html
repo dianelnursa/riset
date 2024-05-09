@@ -36,18 +36,15 @@
 <body>
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
+        <nav class="navbar navbar-expand-sm navbar-default d-sm-block">
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="/static/fructusadmin/images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="/static/fructusadmin/images/logo2.png"
-                        alt="Logo"></a>
+                <a class="navbar-brand"><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden"><img src="/static/fructusadmin/images/logo2.png" alt="Logo"></a>
             </div>
-
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
@@ -67,7 +64,37 @@
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
-    </aside><!-- /#left-panel -->
+        <nav class="navbar navbar-expand-sm navbar-default fixed-top d-sm-none">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand"><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden"><img src="/static/fructusadmin/images/logo2.png" alt="Logo"></a>
+            </div>
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ url_for('main') }}"> <i class="menu-icon fa fa-home"></i>Beranda</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-leanpub"></i>Belajar
+                            Fructus </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('classification') }}"> <i class="menu-icon fa fa-image"></i>Image
+                            Classification </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('tentang') }}"> <i class="menu-icon fa fa-info"></i>Tentang Pengembang</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- Left Panel -->
+
 
     <!-- Left Panel -->
 
@@ -108,7 +135,7 @@
                                         height="300" alt="Card image cap">
                                 </div>
                                 <h5 class="text-sm-center mt-2 mb-1">Dian Budi Elnursa</h5>
-                                <div class="location text-sm-center"></i> Mahasiswa semester 8, jurusan Pendidikan
+                                <div class="location text-sm-center"></i> Mahasiswa semester jurusan Pendidikan
                                     Informatika di Universitas Trunojoyo Madura, saat ini sedang menempuh Tugas Akhir
                                     atau Skripsi </div>
                                 <div class="location text-sm-center"></i> Mari terhubung dan terkoneksi melalui sosial

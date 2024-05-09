@@ -26,15 +26,43 @@
 <body>
   <!-- Left Panel -->
   <aside id="left-panel" class="left-panel">
-    <nav class="navbar navbar-expand-sm navbar-default">
+    <nav class="navbar navbar-expand-sm navbar-default d-sm-block">
       <div class="navbar-header">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
           aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand my-auto"> <img src="/static/fructusadmin/images/Logo.png" alt="Logo" width="664"></a>
+        <a class="navbar-brand"><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+        <a class="navbar-brand hidden"><img src="/static/fructusadmin/images/logo2.png" alt="Logo"></a>
       </div>
-
+      <div id="main-menu" class="main-menu collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="{{ url_for('main') }}"> <i class="menu-icon fa fa-home"></i>Beranda</a>
+          </li>
+          <li>
+            <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-leanpub"></i>Belajar
+              Fructus </a>
+          </li>
+          <li>
+            <a href="{{ url_for('classification') }}"> <i class="menu-icon fa fa-image"></i>Image
+              Classification </a>
+          </li>
+          <li>
+            <a href="{{ url_for('tentang') }}"> <i class="menu-icon fa fa-info"></i>Tentang Pengembang</a>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    <nav class="navbar navbar-expand-sm navbar-default fixed-top d-sm-none">
+      <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+          aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand"><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+        <a class="navbar-brand hidden"><img src="/static/fructusadmin/images/logo2.png" alt="Logo"></a>
+      </div>
       <div id="main-menu" class="main-menu collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li>
@@ -55,7 +83,6 @@
       </div><!-- /.navbar-collapse -->
     </nav>
   </aside><!-- /#left-panel -->
-
   <!-- Left Panel -->
 
   <!-- Right Panel -->
@@ -113,12 +140,16 @@
                     aria-controls="capsici" aria-selected="false">Capcisi Frutecentis Fructus</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" id="amomi-tab" data-toggle="tab" href="#amomi" role="tab" aria-controls="amomi"
+                    aria-selected="false">Amomi Fructus</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" id="tamarin-tab" data-toggle="tab" href="#tamarin" role="tab"
                     aria-controls="tamarin" aria-selected="false">Tamarindus Indica Fructus</Frame></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="amomi-tab" data-toggle="tab" href="#amomi" role="tab" aria-controls="amomi"
-                    aria-selected="false">Amomi Fructus</a>
+                  <a class="nav-link" id="vanila-tab" data-toggle="tab" href="#vanila" role="tab" aria-controls="amomi"
+                    aria-selected="false">Vanilae Fructus</a>
                 </li>
               </ul>
               <hr>
@@ -583,84 +614,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- ...............................INI BAGIAN tamarindus FRUCTUS............................................................................. -->
-                <div class="tab-pane fade" id="tamarin" role="tabpanel" aria-labelledby="tamarin-tab">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <img src="/static/fructusadmin/images/tamarin.jpg" alt="Capsici Fructus"
-                        class="img-fluid rounded mx-auto d-block">
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="alert alert-success text-center" role="alert">
-                        <h3>Tamarindus Indicia Fructus</h3>
-                        <hr>
-                        <p>Piperis Albi Fructus adalah nama latin <strong> asam jawa
-                          </strong>. Buah ini berasal dari tanaman <em>Tamarindus Indica (Luguminoase)</em>yang termasuk
-                          dalam famili <strong><em>Fabaceae</em></strong> subfamili <strong>Caesalpiniacae</strong>.
-                          Asam jawa adalah tanaman herbal yang berasal dari wilayah tropis Asia, termasuk Indonesia.
-                          Ciri
-                          khas buah asam jawa adalah bentuknya yang panjang dan ramping, dengan kulit cokelat tua yang
-                          berkerut. Dalam buah tersebut terdapat biji-biji besar yang dikelilingi oleh daging buah yang
-                          berwarna cokelat kecokelatan.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="alert alert-success" role="alert">
-                        <h5>Kandungan Senyawa Isi Berkhasiat</h5>
-                        <hr style="height : 4px; background-color: azure;">
-                        <p>Buah asam jawa mengandung berbagai senyawa kimia, termasuk asam tartarat, asam sitrat, asam
-                          malat, dan berbagai senyawa polifenolik seperti flavonoid dan tanin.</p>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="alert alert-success" role="alert">
-                        <h5>Pemerian (Aroma dan Rasa)</h5>
-                        <hr style="height : 4px; background-color: azure;">
-                        <p>Buah asam jawa memiliki rasa asam yang khas, serta baunya manis asam yang berasal dari
-                          senyawa pada asam sitrat, asama tartarat, dan asam malat.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="alert alert-success" role="alert">
-                        <h5>Waktu Panen dan Mengolah</h5>
-                        <hr style="height : 4px; background-color: azure;">
-                        <ul>
-                          <li><strong>Pemanenan:</strong> Buah asam jawa dipanen ketika sudah mencapai tingkat
-                            kematangan yang tepat, yang ditandai dengan warna kulitnya yang berubah menjadi hijau
-                            kekuningan sampai kuning gading. Buah dipetik secara manual dari pohon dengan hati-hati
-                            untuk memastikan kualitasnya.</li>
-                          <li><strong>Sortasi Basah:</strong> Setelah dipanen, buah-buah direndam dalam air mendidih
-                            selama beberapa menit untuk menghentikan proses pematangan. Langkah ini bertujuan untuk
-                            membersihkan buah dan memastikan kualitasnya sebelum proses selanjutnya.</li>
-                          <li><strong>Sortasi Kering:</strong> Setelah direndam, kulit luar buah diupas
-                            untuk mengakses daging buah yang berisi pulp. Kemudian, pulp dipisahkan dari biji-bijinya,
-                            karena yang digunakan dalam simplisia adalah daging buahnya. Daging buah yang telah
-                            dipisahkan kemudian dikeringkan
-                            secara alami di bawah sinar matahari atau menggunakan pengeringan buatan dengan suhu yang
-                            terkontrol. Proses pengeringan bertujuan untuk mengurangi kadar air hingga mencapai tingkat
-                            yang tepat, sekitar 10-12%.</li>
-                          <li><strong>Penyimpanan:</strong> Setelah dikeringkan, simplisia dari buah asam jawa disimpan
-                            dalam wadah yang kering dan tertutup rapat untuk menjaga kualitasnya. Simplisia dapat
-                            disimpan untuk digunakan dalam pengobatan herbal atau dipasarkan kepada pabrikan obat-obatan
-                            herbal.</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="alert alert-success" role="alert">
-                        <h5>Indikasi Kegunaan (Manfaat)</h5>
-                        <hr style="height : 4px; background-color: azure;">
-                        <p>Asam jawa sering digunakan sebagai bahan dalam masakan. Selain itu, asam jawa berguna sebagai
-                          obat herbal di berbagai budaya. Ekstrak asam jawa memiliki
-                          potensi untuk mengurangi kadar gula darah, menurunkan kolesterol, dan melindungi terhadap
-                          kerusakan oksidatif. Selain itu, sifat antiinflamasi dan antimikroba dari buah asam jawa juga
-                          dapat memberikan manfaat untuk kesehatan pencernaan dan kulit.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <!-- ...............................INI BAGIAN AMOMI PRUCTUS............................................................................. -->
                 <div class="tab-pane fade" id="amomi" role="tabpanel" aria-labelledby="amomi-tab">
                   <div class="row">
@@ -752,6 +705,94 @@
                     </div>
                   </div>
                 </div>
+                <!-- ...............................INI BAGIAN tamarindus FRUCTUS............................................................................. -->
+                <div class="tab-pane fade" id="tamarin" role="tabpanel" aria-labelledby="tamarin-tab">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <img src="/static/fructusadmin/images/tamarin.jpg" alt="Capsici Fructus"
+                        class="img-fluid rounded mx-auto d-block">
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="alert alert-success text-center" role="alert">
+                        <h3>Tamarindus Indicia Fructus</h3>
+                        <hr>
+                        <p>Piperis Albi Fructus adalah nama latin <strong> asam jawa
+                          </strong>. Buah ini berasal dari tanaman <em>Tamarindus Indica (Luguminoase)</em>yang termasuk
+                          dalam famili <strong><em>Fabaceae</em></strong> subfamili <strong>Caesalpiniacae</strong>.
+                          Asam jawa adalah tanaman herbal yang berasal dari wilayah tropis Asia, termasuk Indonesia.
+                          Ciri
+                          khas buah asam jawa adalah bentuknya yang panjang dan ramping, dengan kulit cokelat tua yang
+                          berkerut. Dalam buah tersebut terdapat biji-biji besar yang dikelilingi oleh daging buah yang
+                          berwarna cokelat kecokelatan.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="alert alert-success" role="alert">
+                        <h5>Kandungan Senyawa Isi Berkhasiat</h5>
+                        <hr style="height : 4px; background-color: azure;">
+                        <p>Buah asam jawa mengandung berbagai senyawa kimia, termasuk asam tartarat, asam sitrat, asam
+                          malat, dan berbagai senyawa polifenolik seperti flavonoid dan tanin.</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="alert alert-success" role="alert">
+                        <h5>Pemerian (Aroma dan Rasa)</h5>
+                        <hr style="height : 4px; background-color: azure;">
+                        <p>Buah asam jawa memiliki rasa asam yang khas, serta baunya manis asam yang berasal dari
+                          senyawa pada asam sitrat, asama tartarat, dan asam malat.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="alert alert-success" role="alert">
+                        <h5>Waktu Panen dan Mengolah</h5>
+                        <hr style="height : 4px; background-color: azure;">
+                        <ul>
+                          <li><strong>Pemanenan:</strong> Buah asam jawa dipanen ketika sudah mencapai tingkat
+                            kematangan yang tepat, yang ditandai dengan warna kulitnya yang berubah menjadi hijau
+                            kekuningan sampai kuning gading. Buah dipetik secara manual dari pohon dengan hati-hati
+                            untuk memastikan kualitasnya.</li>
+                          <li><strong>Sortasi Basah:</strong> Setelah dipanen, buah-buah direndam dalam air mendidih
+                            selama beberapa menit untuk menghentikan proses pematangan. Langkah ini bertujuan untuk
+                            membersihkan buah dan memastikan kualitasnya sebelum proses selanjutnya.</li>
+                          <li><strong>Sortasi Kering:</strong> Setelah direndam, kulit luar buah diupas
+                            untuk mengakses daging buah yang berisi pulp. Kemudian, pulp dipisahkan dari biji-bijinya,
+                            karena yang digunakan dalam simplisia adalah daging buahnya. Daging buah yang telah
+                            dipisahkan kemudian dikeringkan
+                            secara alami di bawah sinar matahari atau menggunakan pengeringan buatan dengan suhu yang
+                            terkontrol. Proses pengeringan bertujuan untuk mengurangi kadar air hingga mencapai tingkat
+                            yang tepat, sekitar 10-12%.</li>
+                          <li><strong>Penyimpanan:</strong> Setelah dikeringkan, simplisia dari buah asam jawa disimpan
+                            dalam wadah yang kering dan tertutup rapat untuk menjaga kualitasnya. Simplisia dapat
+                            disimpan untuk digunakan dalam pengobatan herbal atau dipasarkan kepada pabrikan obat-obatan
+                            herbal.</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="alert alert-success" role="alert">
+                        <h5>Indikasi Kegunaan (Manfaat)</h5>
+                        <hr style="height : 4px; background-color: azure;">
+                        <p>Asam jawa sering digunakan sebagai bahan dalam masakan. Selain itu, asam jawa berguna sebagai
+                          obat herbal di berbagai budaya. Ekstrak asam jawa memiliki
+                          potensi untuk mengurangi kadar gula darah, menurunkan kolesterol, dan melindungi terhadap
+                          kerusakan oksidatif. Selain itu, sifat antiinflamasi dan antimikroba dari buah asam jawa juga
+                          dapat memberikan manfaat untuk kesehatan pencernaan dan kulit.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- ...............................INI BAGIAN Vanilae PRUCTUS............................................................................. -->
+                <div class="tab-pane fade" id="vanila" role="tabpanel" aria-labelledby="vanila-tab">
+                  <div>
+                    <tr>
+                      <th colspan="2" style="text-align: center; background-color: rgb(20, 196, 20)"> Vanillae Fructus
+                      </th>
+                    </tr>
+                  </div>
+                </div>
+
               </div>
             </div><!-- .tabcontent -->
           </div>
@@ -759,7 +800,7 @@
       </div>
     </div><!-- .animated -->
   </div><!-- .content -->
-    <a href="#" onclick="topFunction()" id="myBtn" title="Go to top"
+  <a href="#" onclick="topFunction()" id="myBtn" title="Go to top"
     style="position: fixed; bottom: 20px; right: 20px; display: none;">
     <span class='bx bx-arrow-to-top bx-tada' style='color:#14033b; font-size: 2em;'></span>
   </a>
