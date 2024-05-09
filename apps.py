@@ -20,7 +20,7 @@ app = Flask(__name__)
 app.secret_key="qwerty098765421"
 
 # load model for prediction
-modelxception = load_model("Xception-fructus-98.57.h5")
+modelxception = load_model("Xception-fructus.h5")
 
 UPLOAD_FOLDER = 'static/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -53,22 +53,18 @@ def tentang():
 @app.route('/submit', methods=['POST'])
 
 def predict():
-    #if error
     files = request.files.getlist('file')
-    if file not in request.files:
-        flash("Anda belum memasukan gambar, silakan unggah gambar terlebih dahulu!")
-        return render_template("classifications.html")
-
-    for file in files:
-        if not allowed_file(file.filename):
-            flash("Ekstensi file tidak sesuai, silakan masukan gambar dengan ekstensi sesuai ketentuan diatas!")
-            return render_template("classifications.html")
-
     filename = "temp_image.png"
+    # errors = {}
     success = False
     for file in files:
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        success = True
+        if file and allowed_file(file.filename):
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            success = True
+        else:
+            flash("Anda belum Mengunggah File atau Ekstensi File Salah, \
+                  Silahkan ulangi unggah file dan pastikan ekstensi file sudah sesuai panduan di atas!")
+            return render_template("classifications.html")
         
     img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
