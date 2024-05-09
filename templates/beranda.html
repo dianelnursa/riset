@@ -27,17 +27,43 @@
 <body>
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
+        <nav class="navbar navbar-expand-sm navbar-default d-sm-block">
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <!-- <a class="navbar-brand my-auto"> <img src="/static/fructusadmin/images/Logo.png" alt="Logo" width="100"></a>-->
-                <a class="navbar-brand my-auto" ><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+                <a class="navbar-brand"><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden"><img src="/static/fructusadmin/images/logo2.png" alt="Logo"></a>
             </div>
-
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ url_for('main') }}"> <i class="menu-icon fa fa-home"></i>Beranda</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-leanpub"></i>Belajar
+                            Fructus </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('classification') }}"> <i class="menu-icon fa fa-image"></i>Image
+                            Classification </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('tentang') }}"> <i class="menu-icon fa fa-info"></i>Tentang Pengembang</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-default fixed-top d-sm-none">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand"><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden"><img src="/static/fructusadmin/images/logo2.png" alt="Logo"></a>
+            </div>
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
@@ -58,6 +84,8 @@
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside><!-- /#left-panel -->
+    <!-- Left Panel -->
+
 
     <!-- Left Panel -->
 
@@ -82,10 +110,10 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/static/fructusadmin/images/beranda.svg" alt="Gambar 1" class="img-fluid">
+                            <img src="/static/fructusadmin/images/beranda.png" alt="Gambar 1" class="img-fluid">
                         </div>
                         <div class="carousel-item">
-                            <img src="/static/fructusadmin/images/beranda(1).svg" alt="Gambar 2" class="img-fluid">
+                            <img src="/static/fructusadmin/images/beranda(1).png" alt="Gambar 2" class="img-fluid">
                         </div>
                     </div>
 
