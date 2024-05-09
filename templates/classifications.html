@@ -36,23 +36,44 @@
 </head>
 
 <body>
-
-
-    <!-- Left Panel -->
-
     <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
+        <nav class="navbar navbar-expand-sm navbar-default d-sm-block">
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="/static/fructusadmin/images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="/static/fructusadmin/images/logo2.png"
-                        alt="Logo"></a>
+                <a class="navbar-brand"><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden"><img src="/static/fructusadmin/images/logo2.png" alt="Logo"></a>
             </div>
-
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ url_for('main') }}"> <i class="menu-icon fa fa-home"></i>Beranda</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('belajar') }}"> <i class="menu-icon fa fa-leanpub"></i>Belajar
+                            Fructus </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('classification') }}"> <i class="menu-icon fa fa-image"></i>Image
+                            Classification </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('tentang') }}"> <i class="menu-icon fa fa-info"></i>Tentang Pengembang</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-default fixed-top d-sm-none">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand"><img src="/static/fructusadmin/images/Logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden"><img src="/static/fructusadmin/images/logo2.png" alt="Logo"></a>
+            </div>
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
@@ -73,7 +94,6 @@
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside><!-- /#left-panel -->
-
     <!-- Left Panel -->
 
     <!-- Right Panel -->
@@ -160,7 +180,8 @@
                     <div class="card-body text-center">
                         {% if predictionxception %}
                         <img src="{{img_path}}" alt="gambar prediksi" height="50%" width="50%"><br>
-                        <h5> Simplisia fructus yang terdeteksi adalah : <strong> <i> {{predictionxception}} </i> </strong></h5>
+                        <h5> Simplisia fructus yang terdeteksi adalah : <strong> <i> {{predictionxception}} </i>
+                            </strong></h5>
                         <hr>
                         <h5> Akurasi terdeteksi: <i> {{confidenceexception}} </i></h5><br>
                         <p> CNN add Model Xception</p>
@@ -168,19 +189,32 @@
                     </div>
                 </div>
             </div>
+            <a href="#" onclick="topFunction()" id="myBtn" title="Go to top"
+                style="position: fixed; bottom: 20px; right: 20px; display: none;">
+                <span class='bx bx-arrow-to-top bx-tada' style='color:#14033b; font-size: 2em;'></span>
+            </a>
+            <script>
+                // Fungsi untuk menampilkan atau menyembunyikan tombol "Kembali ke atas" berdasarkan posisi scroll
+                window.onscroll = function () { scrollFunction() };
+
+                function scrollFunction() {
+                    // Jika posisi scroll lebih dari 20 piksel dari bagian atas, tampilkan tombol
+                    if (document.body.scrollTop > 29 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("myBtn").style.display = "block";
+                    } else {
+                        // Jika posisi scroll kurang dari 20 piksel dari bagian atas, sembunyikan tombol
+                        document.getElementById("myBtn").style.display = "none";
+                    }
+                }
+
+                // Fungsi untuk kembali ke atas saat tombol diklik
+                function topFunction() {
+                    document.body.scrollTop = 0; // Untuk Safari
+                    document.documentElement.scrollTop = 0; // Untuk Chrome, Firefox, IE, dan Opera
+                }
+            </script>
         </div>
         <!--/.col-->
-
-
-        <!--/.col-->
-
-
-        <!--/.col-->
-
-
-        <!--/.col-->
-
-
         <!-- Right Panel -->
 
         <script src="/static/fructusadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
@@ -222,8 +256,14 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
             const form = document.querySelector("form");
+            const confidencenasnet = document.getElementById("confidencenasnet");
+            const predictionnasnet = document.getElementById("predictionnasnet");
+            const confidencevgg = document.getElementById("confidencevgg");
+            const predictionvgg = document.getElementById("predictionvgg");
             const confidenceexception = document.getElementById("confidenceexception");
             const predictionxception = document.getElementById("predictionxception");
+            const confidencecnn = document.getElementById("confidencecnn");
+            const predictioncnn = document.getElementById("predictioncnn");
 
             form.addEventListener("submit", (e) => {
                 confidencenasnet.innerHTML = '';
@@ -244,8 +284,14 @@
                     })
                     .then((res) => {
                         document.getElementById("image").src = `${res.data.data.filename}`;
+                        confidencenasnet.append(res.data.data.confidencenasnet);
+                        predictionnasnet.append(res.data.data.predictionnasnet);
+                        confidencevgg.append(res.data.data.confidencevgg);
+                        predictionvgg.append(res.data.data.predictionvgg);
                         confidencexception.append(res.data.data.confidenceexception);
                         predictionxception.append(res.data.data.predictionxception);
+                        confidencecnn.append(res.data.data.confidencecnn);
+                        predictioncnn.append(res.data.data.predictioncnn);
                         console.log(res.data.data);
                     })
                     .catch((err) => {
