@@ -20,7 +20,7 @@ app = Flask(__name__)
 app.secret_key="qwerty098765421"
 
 # load model for prediction
-modelxception = load_model("Xception-fructus-98.57.h5")
+modelxception = load_model("Xception-fructus.h5")
 
 UPLOAD_FOLDER = 'static/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
