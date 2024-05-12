@@ -23,7 +23,10 @@
 .bg-flat-color-4 {background: #f86c6b};
 .bg-flat-color-5 {background: #4dbd74};
 
+.root{
+    --secondary-color:              #14B789;
 
+}
 .transition {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -868,7 +871,6 @@ header .form-inline {
                 color: #878787;
                 display: inline-block;
                 font-size: 16px;
-                float: left;
                 padding: 0 7px;
                 width: inherit;
                 text-align: center;
@@ -942,7 +944,6 @@ header .form-inline {
     left: 40%;
 }
 .twt-feed {
-    -webkit-border-radius: 4px 4px 0 0;
     color: #FFFFFF;
     padding: 40px 10px 10px;
     position: relative;
@@ -1708,7 +1709,6 @@ header .form-inline {
             .navbar-brand {
                 border-bottom: none;
                 display: inline-block;
-                float: left;
                 line-height: 1;
                 margin-top: 11px;
                 min-height: inherit;
@@ -1822,3 +1822,15 @@ header .form-inline {
         }
     }
 }
+.about-image {
+    border-radius: var(--border-radius-medium);
+  }
+.section-title-wrap {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius-small);
+    padding: 10px 30px;
+  }
+.about-thumb {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
