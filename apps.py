@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, jsonify, flash
 from keras.models import load_model
 
 from keras.utils import load_img, img_to_array
-from keras_applications.xception.Xception import Xception
-from keras_applications.xception.Xception import preprocess_input
-from keras_applications.xception.Xception import decode_predictions
+from keras_applications.xception import Xception
+from keras_applications.xception import preprocess_input
+from keras_applications.xception import decode_predictions
 
 import tensorflow as tf
 from tensorflow import keras
