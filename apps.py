@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, jsonify, flash
 from keras.models import load_model
 
 from keras.utils import load_img, img_to_array
-from keras_applications.xception import preprocess_input
-from keras_applications.xception import decode_predictions
-from keras_applications.xception import MobileNetV2
+from keras_applications import Xception
+from keras_applications import preprocess_input
+from keras_applications import decode_predictions
 
 import tensorflow as tf
 from tensorflow import keras
