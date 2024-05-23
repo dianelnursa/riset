@@ -111,9 +111,9 @@ def predict():
     img.close()
 
     # Menyiapkan gambar untuk prediksi dengan mengubah ukuran dan mengubahnya menjadi array
-    img = load_img(predict_image_path, target_size=(128, 128, 3))
+    img = load_img(predict_image_path, target_size=(224, 224, 3))
     x = img_to_array(img) / 255.0  # Normalisasi nilai pixel
-    x = x.reshape(1, 128, 128, 3)
+    x = x.reshape(1, 224, 224, 3)
     images = np.array(x)
 
     # Melakukan prediksi menggunakan model yang sudah dilatih
