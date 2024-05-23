@@ -31,10 +31,10 @@ from flask_cors import CORS
 # Membuat instance dari aplikasi Flask
 app = Flask(__name__)
 # Mengatur secret key untuk keamanan sesi aplikasi
-app.secret_key="qwerty098765421"
+app.secret_key="qwerty0987765421"
 
 # Memuat model pra-terlatih Xception dari file .h5
-modelxception = load_model("Xception-fructus-98.57.h5")
+modelxception = load_model("Xception-fructus-99.23.h5")
 
 # Mengatur folder untuk menyimpan file yang diunggah
 UPLOAD_FOLDER = 'static/uploads/'
